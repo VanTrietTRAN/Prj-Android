@@ -9,7 +9,7 @@ import {
 
 const router = express.Router();
 
-router.get("/:userId", getTransactionsByUserId );
+router.get("/:userId", getTransactionsByUserId);
 
 router.post("/", createTransaction );
 
