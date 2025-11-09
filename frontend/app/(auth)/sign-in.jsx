@@ -31,14 +31,15 @@ export default function Page() {
         router.replace('/')
       } else {
         console.error(JSON.stringify(signInAttempt, null, 2))
-        setError('Additional verification required. Check console for details.')
+        // setError('Additional verification required. Check console for details.')
       }
     } catch (err) {
-      console.error(err)
-      setError(JSON.stringify(err, null, 2))
-    } finally {
-      setIsSubmitting(false)
-    }
+      if (err.error?.[0]?.code === "form_password_incorrect") {
+        setError("Password is incorrect. Please try again.");
+      }else {
+        setError("An error occurred. Please try again.");
+      }
+    } 
   }
 
   return (

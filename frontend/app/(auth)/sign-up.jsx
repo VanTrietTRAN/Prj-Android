@@ -37,6 +37,7 @@ export default function SignUpScreen() {
       }else {
         setError("An error occurred. Please try again.");
       }
+      console.log(err);
     }
       
   }
