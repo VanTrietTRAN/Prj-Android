@@ -2,7 +2,8 @@
 import { useState, useCallback } from 'react';
 import { Alert } from 'react-native';
 
-const API_URL = "http://192.168.113.176:5001/api"  // chỉnh IP theo wifi kết nối
+// const API_URL = "https://prj-android-ej4x.onrender.com/api"  // chỉnh IP theo wifi kết nối
+const API_URL = "http://localhost:5001/api" 
 
 export const useTransactions = (userId) => {
     const [transactions, setTransactions] = useState([]);
